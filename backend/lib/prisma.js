@@ -1,6 +1,6 @@
 // lib/prisma.js
+require('dotenv').config(); // load env vars before PrismaClient reads DATABASE_URL
 const { PrismaClient } = require('@prisma/client');
-require('dotenv').config(); // ensure .env is loaded
 
 const prisma = new PrismaClient();
 
