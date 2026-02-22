@@ -1,5 +1,4 @@
-const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
+const prisma = require('../lib/prisma');
 
 // Factory Pattern: Encapsulates the object creation logic.
 // This ensures that all task objects follow the same structure and validation.
