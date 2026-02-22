@@ -10,7 +10,21 @@ const taskRoutes = require('./routes/taskRoutes');
 const app = express();
 
 // Middleware
-app.use(cors());
+const allowedOrigins = [
+  'https://task-management-capstone.vercel.app',
+  'http://localhost:5173', // local dev
+];
+app.use(cors({
+  origin: (origin, callback) => {
+    // allow requests with no origin (mobile apps, curl, Postman)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+}));
 app.use(express.json());
 
 // Routes
