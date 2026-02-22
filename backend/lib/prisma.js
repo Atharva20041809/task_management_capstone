@@ -1,6 +1,7 @@
-const { PrismaClient } = require("@prisma/client");
+// lib/prisma.js
+const { PrismaClient } = require('@prisma/client');
+require('dotenv').config(); // ensure .env is loaded
 
-// Just default constructor; Prisma reads DATABASE_URL automatically
 const prisma = new PrismaClient();
 
 module.exports = prisma;
