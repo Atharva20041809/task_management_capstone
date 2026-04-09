@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Environment variables — never commit real secrets
+.env
+.env.local
+.env.production
+
+# Build output
+dist/
+build/
+
+# Prisma generated client
+# (keep schema.prisma, ignore generated files)
+backend/node_modules/
+
+# OS
+.DS_Store
