@@ -5,9 +5,7 @@ import { authMiddleware } from "../middleware/authMiddleware";
 const router = express.Router();
 
 router.use(authMiddleware);
-router.get('/',()=>{
-    console.log('The backend is currenty running....')
-})
+
 router.get("/tasks", getTasks);
 router.post("/tasks", addTask);
 router.patch("/tasks/:id", updateTask);

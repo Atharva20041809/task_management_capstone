@@ -12,6 +12,10 @@ app.use(express.json());
 
 connectDB();
 
+app.get("/", (_, res) => {
+  res.send("Backend is live");
+});
+
 app.use("/api", authRoutes);
 app.use("/api", taskRoutes);
 
